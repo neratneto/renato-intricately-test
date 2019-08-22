@@ -1,5 +1,5 @@
 <template>
-<div class="page">
+<div :class="`page ${selectedTab === 'COMPANY PAGE' && 'blue-bg'}`">
   <toolbar />
 
   <div class="outer-container">
@@ -15,6 +15,8 @@
       </div>
     </div>
   </div>
+
+  <footer :class="`footer ${selectedTab === 'COMPANY PAGE' ? 'white-bg' : 'grey-bg'}`" />
 </div>
 </template>
 
@@ -44,9 +46,12 @@ export default {
 
 <style lang="scss">
 .page {
+    // height: 100%;
     .outer-container {
         display: flex;
         margin: auto 10vw;
+        padding-top: 10vh;
+        padding-bottom: 20vh;
         flex-direction: column;
         flex-wrap: wrap;
         .inner-container {
@@ -62,5 +67,21 @@ export default {
             }
         }
     }
+    .footer {
+        height: 4vh;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding: 2vw;
+    }
+}
+.blue-bg {
+    background-color: #E7E9F3;
+}
+.white-bg {
+    background-color: #ffffff;
+}
+.grey-bg {
+    background-color: #F3F3F3;
 }
 </style>
