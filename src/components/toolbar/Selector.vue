@@ -1,12 +1,17 @@
 <template>
 <div class="selector">
-  <p>{{ text }}</p>
-  <img class="icon" src="../../images/company-data/arrow-down.png" srcset="../../images/company-data/arrow-down@2x.png 80w, ../../images/company-data/arrow-down@3x.png 120w" />
+  <span class="text">{{ text }}</span>
+  <responsive-image class="icon" :path="`company-data/arrow-down`" />
 </div>
 </template>
 
 <script>
+import ResponsiveImage from '../ResponsiveImage.vue'
+
 export default {
+  components: {
+    ResponsiveImage
+  },
   props: {
     text: String
   }
@@ -18,9 +23,15 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    margin: auto 1vw;
     .icon {
-        width: 3.2vw;
-        height: 3.2vw;
+        margin: auto;
+        width: 2.4vw;
+        height: 2.4vw;
+    }
+    .text {
+        font-weight: bold;
+        margin: auto;
     }
 }
 </style>

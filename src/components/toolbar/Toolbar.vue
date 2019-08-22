@@ -1,23 +1,28 @@
 <template>
 <div class="toolbar">
-  <img class="logo" src="../../images/company-data/logo-pink.png" srcset="../../images/company-data/logo-pink@2x.png 80w, ../../images/company-data/logo-pink@3x.png 120w" />
+  <div class="flex-row">
+    <responsive-image class="logo" :path="`company-data/logo-pink`" />
 
-  <search-bar />
+    <search-bar />
+    <span style="margin: auto 1vw;">OR</span>
+    <light-button text="NEW SMARTLIST" />
+  </div>
 
-  <p>OR</p>
-  <light-button text="NEW SMARTLIST" />
+  <div class="flex-row">
+    <selector text="PROSPECT" />
+    <selector text="ALERT" />
+    <selector text="LEARN" />
+  </div>
 
-  <selector text="PROSPECT" />
-  <selector text="ALERT" />
-  <selector text="LEARN" />
-
-  <img alt="browser-select" class="chrome-icon" src="../../images/company-data/default.png" srcset="../../images/company-data/default@2x.png 80w, ../../images/company-data/default@3x.png 120w" />
-
-  <user-menu />
+  <div class="flex-row">
+    <responsive-image class="chrome-icon" :path="`company-data/default`" />
+    <user-menu />
+  </div>
 </div>
 </template>
 
 <script>
+import ResponsiveImage from '../ResponsiveImage.vue'
 import LightButton from './LightButton.vue'
 import Selector from './Selector.vue'
 import UserMenu from './UserMenu.vue'
@@ -25,6 +30,7 @@ import SearchBar from './SearchBar.vue'
 
 export default {
   components: {
+    ResponsiveImage,
     LightButton,
     Selector,
     UserMenu,
@@ -41,14 +47,18 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    max-height: 10vh;
+    max-height: 6vh;
+    position: fixed;
+    width: 100%;
     .logo {
-        width: 4vw;
-        height: 4vw;
+        margin: auto 1vw;
+        width: 2.8vw;
+        height: 2.8vw;
     }
     .chrome-icon {
-        width: 3.2vw;
-        height: 3.2vw;
+        margin: auto 1vw;
+        width: 2.4vw;
+        height: 2.4vw;
     }
 }
 </style>

@@ -1,20 +1,30 @@
 <template>
-<div class="user">
-  <img class="icon" src="../../images/company-data/group.png" srcset="../../images/company-data/group@2x.png 80w, ../../images/company-data/group@3x.png 120w" />
-  <img class="arrow" src="../../images/company-data/arrow-down.png" srcset="../../images/company-data/arrow-down@2x.png 80w, ../../images/company-data/arrow-down@3x.png 120w" />
+<div class="flex-row user">
+  <responsive-image class="icon" :path="`company-data/group`" />
+  <responsive-image class="arrow" :path="`company-data/arrow-down`" />
 </div>
 </template>
 
+<script>
+import ResponsiveImage from '../ResponsiveImage.vue'
+
+export default {
+  components: {
+    ResponsiveImage
+  }
+}
+</script>
 
 <style lang="scss" >
 .user {
+    margin: auto;
     .icon {
-        width: 3.2vw;
-        height: 3.2vw;
+        width: 2.4vw;
+        height: 2.4vw;
     }
     .arrow {
-        width: 3.2vw;
-        height: 3.2vw;
+        width: 2.4vw;
+        height: 2.4vw;
     }
 }
 </style>

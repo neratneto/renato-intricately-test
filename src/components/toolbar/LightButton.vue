@@ -1,6 +1,6 @@
 <template>
-<div class="button">
-  <p>{{ text }}</p>
+<div class="flex-column button">
+  <span class="text">{{ text }}</span>
 </div>
 </template>
 
@@ -15,12 +15,11 @@ export default {
 <style lang="scss" >
 .button {
     background-color: #5D699A;
-    padding: 1vw 2vw;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 1em;
+    .text {
+        margin: auto 2vw;
+    }
 }
 </style>

@@ -1,24 +1,33 @@
 <template>
-<div class="search-bar">
-  <img class="icon" src="../../images/company-data/search.png" srcset="../../images/company-data/search@2x.png 64w, ../../images/company-data/search@3x.png 96w" />
-  <p>Search companies</p>
+<div class="flex-row search-bar">
+  <responsive-image class="icon" :path="`company-data/search`" />
+  <span class="text">Search companies</span>
 </div>
 </template>
 
+<script>
+import ResponsiveImage from '../ResponsiveImage.vue'
+
+export default {
+  components: {
+    ResponsiveImage
+  }
+}
+</script>
 
 <style lang="scss" >
 .search-bar {
     background-color: #1F2B5A;
     border-radius: 4px;
-    padding: 0.1vh 2vw;
-    justify-content: flex-start;
-    display: flex;
-    flex-wrap: nowrap;
+    padding: 0.1vh 0.4vw;
     width: 20vw;
     .icon {
-        margin: auto;
-        width: 3vw;
-        height: 3vw;
+        margin: auto 0.4vw;
+        width: 2.4vw;
+        height: 2.4vw;
+    }
+    .text {
+        margin: auto 0;
     }
 }
 </style>
