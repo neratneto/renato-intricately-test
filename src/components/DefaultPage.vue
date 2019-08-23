@@ -46,7 +46,6 @@ export default {
 
 <style lang="scss">
 .page {
-    // height: 100%;
     .outer-container {
         display: flex;
         margin: auto 10vw;

@@ -1,6 +1,6 @@
 <template>
 <card class="tabs">
-  <div :class="`tab ${tab === selectedTab && 'selected-tab'}`" v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">{{ tab }}</div>
+  <div :class="`tab ${tab === selectedTab ? 'selected-tab' : ''}`" v-for="(tab, index) in tabs" :key="index" @click="changeTab(tab)">{{ tab }}</div>
 </card>
 </template>
 
